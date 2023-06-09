@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-card :class="$style.propertyCard"  border-variant="light">
-                <b-img rounded :class="$style.propertyImage" :src="image" fluid alt="Wookin Property"></b-img>
+                <b-img fluid-grow center rounded :class="$style.propertyImage" :src="image" alt="Wookin Property"></b-img>
                 <b-row cols="12" class="pt-3">
                     <b-col cols="auto" class="pr-1 text-center">
                     <b-avatar :src="agent.image ? agent.image : ''">  
