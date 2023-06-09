@@ -29,7 +29,7 @@
             class="mr-sm-2"
             placeholder="Search"
           ></b-form-input>
-          <b-button size="sm" class="btn btn-primary my-2 my-sm-0" type="submit"
+          <b-button variant="primary" size="sm" class="btn btn-primary my-2 my-sm-0" type="submit"
             > + New home</b-button
           >
         </b-nav-form>
