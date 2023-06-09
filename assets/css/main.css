@@ -1,0 +1,17 @@
+:root {
+  --grey: #dedede;
+  --white: #ffffff;
+}
+
+/* breakpoints */
+@value xs: 345px;
+@value sm: 536px;
+@value md: 720px;
+@value lg: 940px;
+@value xl: 1200px;
+@value xxl: 1200px;
+
+/* background colors */
+.bg-white {
+  background-color: var(--white);
+}
