@@ -29,7 +29,7 @@ export default defineComponent({
 }
 
 .navbar {
-  position: relative;
+  /* position: sticky; */
 }
 
 .main {
@@ -56,6 +56,7 @@ export default defineComponent({
   .main {
     position: absolute;
     left: 5%;
+    top: 10%;
     width: 95%;
     margin: 0;
   }
