@@ -4,7 +4,7 @@
     <filter-view></filter-view>
   </div>
     <b-row cols="12" :class="$style.propertiesWrapper">
-      <b-col cols="4" class="pb-4" v-for="(property, p) in properties" :key="p">
+      <b-col v-for="(property, p) in properties" :key="p" sm="12" md="4" lg="4" xl="4" class="pb-4">
           <property-card :agent="property.agent" :image="property.image"></property-card>
       </b-col>
     </b-row>
