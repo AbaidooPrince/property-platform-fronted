@@ -39,6 +39,7 @@ export default defineComponent({
 @value md, lg from breakpoints;
 .filterColumn {
   width: 0;
+  padding: 1rem;
 }
 
 @media (min-width: lg) {
