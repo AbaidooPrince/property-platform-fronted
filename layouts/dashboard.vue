@@ -36,6 +36,7 @@ export default defineComponent({
   position: absolute;
   height: 100vh;
   width: 100%;
+  top: 10%;
 }
 
 @media (min-width: md) {
@@ -56,7 +57,6 @@ export default defineComponent({
   .main {
     position: absolute;
     left: 5%;
-    top: 10%;
     width: 95%;
     margin: 0;
   }
