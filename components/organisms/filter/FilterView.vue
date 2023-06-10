@@ -1,29 +1,53 @@
 <template>
-  <div>
-    <div v-b-toggle.my-collapse aria-expanded="true" :class="$style.filterHeader">
-    <label variant="transparent"
-      >{{ data.title }}</label
-    >
-    <icon-chevron direction="down"></icon-chevron>
+  <div :class="$style.filterWrapper">
+    <div>
+      <div v-b-toggle.country-collapse aria-expanded="true" :class="$style.filterHeader">
+      <label :class="$style.filterHeaderTitle"
+        >{{ country.title }}</label
+      >
+      <icon-chevron direction="down"></icon-chevron>
+      </div>
+      <b-collapse v-show="true" id="country-collapse"> 
+          <b-form-checkbox-group
+        v-model="selectedCountries"
+        :options="country.data"
+        class="mb-3"
+        value-field="value"
+        text-field="name"
+        disabled-field="notEnabled"
+        stacked
+      ></b-form-checkbox-group>
+      </b-collapse>
     </div>
-    <b-collapse v-show="true" id="my-collapse"> 
-        <b-form-checkbox-group
-      v-model="selectedCountries"
-      :options="data.data"
-      class="mb-3"
-      value-field="value"
-      text-field="name"
-      disabled-field="notEnabled"
-      stacked
-    ></b-form-checkbox-group>
-    </b-collapse>
+    <div>
+      
+      <div v-b-toggle.type-collapse aria-expanded="true" :class="$style.filterHeader">
+      <label :class="$style.filterHeaderTitle"
+        >{{ estateType.title }}</label
+      >
+      <icon-chevron direction="down"></icon-chevron>
+      </div>
+      <b-collapse v-show="true" id="type-collapse"> 
+          <b-form-checkbox-group
+        v-model="selectedEstateType"
+        :options="estateType.data"
+        class="mb-3"
+        value-field="value"
+        text-field="name"
+        disabled-field="notEnabled"
+        stacked
+      ></b-form-checkbox-group>
+      </b-collapse>
+    </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
 
-import { reactive } from 'vue'
-const selectedCountries = reactive([{name: 'Australia', value: 1}])
-const data = 
+import { ref } from 'vue'
+const selectedCountries = ref([{name: 'Australia', value: 1}])
+const selectedEstateType = ref([{name: 'Apartment', value: 1}])
+const country = 
       {
         title: 'Country',
         data: [
@@ -33,6 +57,15 @@ const data =
           { name: 'Bulgaria', value: 4 },
           { name: 'China', value: 5 },
           { name: 'Estonia', value: 6 },
+        ],
+      }
+const estateType = {
+  title: 'Estate Type',
+        data: [
+          { name: 'Apartment', value: 1 },
+          { name: 'Mansion', value: 2 },
+          { name: 'Summerhouse', value: 3 },
+          { name: 'Plaza', value: 4 }
         ],
       }
 
@@ -45,8 +78,29 @@ export default {
 </script>
 
 <style module scoped>
+@value breakpoints: '../../../assets/css/main.css';
+@value md, lg from breakpoints;
+.filterWrapper {
+  display: flex;
+  /* justify-content: space-between; */
+}
 .filterHeader {
   display: flex;
   justify-content: space-between;
+  width: 5rem;
+}
+.filterHeaderTitle {
+  font-weight: bold;
+  font-size: medium;
+}
+
+@media (min-width: lg) {
+  .filterHeader {
+    width: auto;
+  }
+  .filterWrapper {
+    display: inline;
+  }
+  
 }
 </style>
