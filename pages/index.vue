@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import mockData from '../store/mock'
+import { properties } from '../store/mock'
 import FilterView from '~/components/organisms/filter/FilterView.vue';
 import PropertyCard from '~/components/molecules/property/PropertyCard.vue';
 
@@ -22,7 +22,6 @@ export default defineComponent({
   components: { FilterView, PropertyCard },
   layout: 'dashboard',
   setup() {
-    const properties = mockData
 
     return {
       properties

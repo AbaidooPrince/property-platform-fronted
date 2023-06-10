@@ -1,6 +1,6 @@
-import {data} from './mock'
+import {properties} from './mock'
 export const state = () => ({
-    properties: data
+    properties
 })
 
 
