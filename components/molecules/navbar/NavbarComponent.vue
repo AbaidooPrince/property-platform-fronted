@@ -31,7 +31,7 @@
           ></b-form-input>
           <modal-component :hide-footer="true" title="Modal Title" label="+ New home">
             <template #content>
-              <!-- <new-home-form></new-home-form> -->
+              <new-home-form></new-home-form>
             </template>
           </modal-component>
         </b-nav-form>
@@ -52,11 +52,12 @@
 import { defineComponent, ref } from 'vue'
 import ModalComponent from '../modal/ModalComponent.vue'
 import SideNavComponent from '../sidenav/SideNavComponent.vue'
+import NewHomeForm from '~/components/forms/properties/NewHomeForm.vue'
 // '../../../assets'
 
 export default defineComponent({
   name: 'NavbarComponent',
-  components: { SideNavComponent, ModalComponent },
+  components: { SideNavComponent, ModalComponent, NewHomeForm },
   setup() {
     const sideNavToggle = ref<boolean>(false)
 
