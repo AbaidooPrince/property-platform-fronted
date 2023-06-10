@@ -18,6 +18,13 @@
     </svg>
   </div>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    name: 'IconChevron'
+})
+</script>
 <script lang="ts" setup>
 
 interface ChevronTypes {
