@@ -29,9 +29,11 @@
             class="mr-sm-2"
             placeholder="Search"
           ></b-form-input>
-          <b-button variant="primary" size="sm" class="btn btn-primary my-2 my-sm-0" type="submit"
-            > + New home</b-button
-          >
+          <modal-component :hide-footer="true" title="Modal Title" label="+ New home">
+            <template #content>
+              <!-- <new-home-form></new-home-form> -->
+            </template>
+          </modal-component>
         </b-nav-form>
 
         <b-nav-item-dropdown right>
@@ -48,12 +50,13 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import ModalComponent from '../modal/ModalComponent.vue'
 import SideNavComponent from '../sidenav/SideNavComponent.vue'
 // '../../../assets'
 
 export default defineComponent({
   name: 'NavbarComponent',
-  components: { SideNavComponent },
+  components: { SideNavComponent, ModalComponent },
   setup() {
     const sideNavToggle = ref<boolean>(false)
 
